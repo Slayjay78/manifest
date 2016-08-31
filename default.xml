@@ -6,6 +6,9 @@
   
   <remote name = "gh"
           fetch = "https://github.com/" />
+
+  <remote name = "rusty"
+          fetch = "https://github.com/Slayjay78" />
   
   <remote name = "uber"
           revision = "master"
@@ -19,9 +22,16 @@
           sync-c="true"
           sync-j = "4" />
 
-<project path="build" name="build" remote="uber" revision="master" >
+  <!--Rusty Repos -->
+  <project path="build" name="build" remote="uber" revision="master" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
+  <project path="manifest" name="manifest" remote="rusty" revision="rusted-n" />
+  <project path="device/huawei/angler" name="device_angler" remote="rusty" revision="rusted-n" />
+  <project path="frameworks/base" name="frameworks_base" remote="rusty" revision="rusted-n" />
+  <project path="packages/apps/Settings" name="packages_apps_Settings" remote="rusty" revision="rusted-n" />
+  <project path="vendor/uber" name="vendor_rusted" remote="rusty" revision="uber" />
+
   <project path="build/blueprint" name="platform/build/blueprint" groups="pdk,tradefed" />
   <project path="build/kati" name="platform/build/kati" groups="pdk,tradefed" />
   <project path="build/soong" name="platform/build/soong" groups="pdk,tradefed" >
@@ -39,7 +49,6 @@
   <project path="developers/docs" name="platform/developers/docs" revision="master" />
   <project path="development" name="platform/development" groups="pdk-cw-fs,pdk-fs" />
   <project path="device/common" name="device/common" groups="pdk-cw-fs,pdk-fs" />
-  <project path="device/huawei/angler" name="device_huawei_angler" remote="uber" revision="master" />
   <project path="kernel/huawei/angler" name="DespairFactor/angler" remote="gh" revision="n" />
   <project path="device/lge/bullhead" name="device_lge_bullhead" remote="uber" revision="master" />
   <project path="kernel/lge/bullhead" name="DespairFactor/bullhead" remote="gh" revision="n" />
@@ -290,7 +299,6 @@
   <project path="external/zopfli" name="platform/external/zopfli" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/zxing" name="platform/external/zxing" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/av" name="platform/frameworks/av" groups="pdk" />
-  <project path="frameworks/base" name="frameworks_base" remote="uber" revision="master"  />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="pdk" />
   <project path="frameworks/compile/mclinker" name="platform/frameworks/compile/mclinker" groups="pdk" />
   <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="pdk" />
